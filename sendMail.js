@@ -4,9 +4,9 @@ const nodemailer = require('nodemailer');
 
 var auth = {
     type: 'OAuth2',
-    user: 'mailcomingfrom@gmail.com',
-    pass: "m@1lS3rv3r",
-    to: 'ajayvarghese003@gmail.com',
+    user: ${{ secrets.email }},
+    pass: ${{ secrets.password }},
+    to: ${{ secrets.to }},
 };
 
 function main (mailParams) {
