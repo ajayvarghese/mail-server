@@ -1,12 +1,14 @@
 'use strict';
 
 const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+dotenv.config();
 
 var auth = {
     type: 'OAuth2',
-    user: ${{ secrets.email }},
-    pass: ${{ secrets.password }},
-    to: ${{ secrets.to }},
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD,
+    to: process.env.DESTINATION,
 };
 
 function main (mailParams) {
