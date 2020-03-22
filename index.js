@@ -2,6 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var mailService = require('./sendMail.js');
+const dotenv = require('dotenv');
+dotenv.config();
+const {PORT} = process.env; 
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -22,6 +25,6 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-app.listen(3000, function () {
-  console.log('Mail Server: Listening on port 3000!');
+app.listen(PORT, function () {
+  console.log(`Mail Server: Listening on port ${PORT}`);
 });
