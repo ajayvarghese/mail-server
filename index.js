@@ -26,5 +26,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen(PORT, function () {
-  console.log(`Mail Server: Listening on port ${PORT}`);
+  console.log(`Mail Server Running: Listening on port ${PORT}`);
 });
